@@ -12,7 +12,6 @@ $(function() {
     });
 
     // фиксация меню 
-
  		var headerH = $('#js-header').height(),
  				navH = $('#js-nav-container').innerHeight();
  		$(document).on('scroll', function () {
@@ -26,4 +25,16 @@ $(function() {
  			}
  		})
     
+    // плавный скролл к блокам в меню
+    $('#js-nav a').on('click', function(event) {
+    	event.preventDefault();
+    	var currentBlock = $(this).attr('href'),
+    			currentBlockOffset = $(currentBlock).offset().top; // от верах браузера до этого элемента
+    	
+    	$('html,body').animate({
+    		scrollTop : currentBlockOffset - 20
+    	}, 500);
+    });
+
+
 });
