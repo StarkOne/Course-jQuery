@@ -36,5 +36,18 @@ $(function() {
     	}, 500);
     });
 
+    // создание модального окна
 
+    $('.js-show-modal').on('click', function(event) {
+    	event.preventDefault();
+    	var currentModal = $(this).attr('href');
+    	$(currentModal + ', #js-overlay').fadeIn(500);
+    	$('body').addClass("open-modal");
+
+    	$('.js-modal-close, #js-overlay').on('click', function(event) {
+    		event.preventDefault();
+    		$('.js-modal, #js-overlay').fadeOut(250);
+    		$('body').removeClass("open-modal");
+    	});
+    });
 });
