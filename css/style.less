@@ -96,6 +96,15 @@ address {
 .nav-container {
     border-bottom: 1px solid #424348;
     padding: 20px 0;
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        background-color: @theme_color2;
+    }
 }
 
 .logo-container {
