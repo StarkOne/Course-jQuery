@@ -50,4 +50,19 @@ $(function() {
     		$('body').removeClass("open-modal");
     	});
     });
+
+    // создание акардиона
+
+    $('.js-faq-title').on('click', function(event) {
+    	event.preventDefault();
+    	var $this = $(this);
+
+    	if(!$this.hasClass('active')) {
+    		$('.js-faq-constent').slideUp();
+    		$('.js-faq-title').removeClass('active');
+    	}
+
+    	$this.toggleClass('active');
+    	$this.next().slideToggle('fast');
+    });
 });
