@@ -51,18 +51,34 @@ $(function() {
     	});
     });
 
-    // создание акардиона
+    // // создание акардиона
+
+    // $('.js-faq-title').on('click', function(event) {
+    // 	event.preventDefault();
+    // 	var $this = $(this);
+
+    // 	if(!$this.hasClass('active')) {
+    // 		$('.js-faq-constent').slideUp();
+    // 		$('.js-faq-title').removeClass('active');
+    // 	}
+
+    // 	$this.toggleClass('active');
+    // 	$this.next().slideToggle('fast');
+    // });
+
+
+    // создание акардиона 2
 
     $('.js-faq-title').on('click', function(event) {
     	event.preventDefault();
-    	var $this = $(this);
-
+    	var $this = $(this),
+    			answerId = $(this).attr('href');
     	if(!$this.hasClass('active')) {
     		$('.js-faq-constent').slideUp();
     		$('.js-faq-title').removeClass('active');
     	}
 
     	$this.toggleClass('active');
-    	$this.next().slideToggle('fast');
+    	$(answerId).slideToggle('fast');
     });
 });
