@@ -81,4 +81,17 @@ $(function() {
     	$this.toggleClass('active');
     	$(answerId).slideToggle('fast');
     });
+
+    // всплывающие подсказки
+    $('.js-popup-hover').hover(function() {
+    	/* Stuff to do when the mouse enters the element */
+    	var $this = $(this),
+    			popupId = $(this).attr('href');
+
+    			$(popupId).fadeIn();
+    }, function() {
+    	/* Stuff to do when the mouse leaves the element */
+
+    	$('.js-popup').fadeOut('');
+    });
 });
