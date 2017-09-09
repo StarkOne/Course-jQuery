@@ -21,8 +21,7 @@
     top: 0;
     left: 0;
     z-index: 999;
-
-    display: none;
+    display: block;
 }
 
 .modal {
@@ -43,4 +42,8 @@
 .open-modal{
 	overflow-y: hidden;
 	padding-right: 15px;
+}
+
+.faq-content {
+	display: none;
 }

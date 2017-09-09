@@ -41,15 +41,22 @@ $(function() {
     $('.js-show-modal').on('click', function(event) {
     	event.preventDefault();
     	var currentModal = $(this).attr('href');
-    	$(currentModal + ', #js-overlay').fadeIn(500);
-    	$('body').addClass("open-modal");
+    	$(currentModal).fadeIn(500);
+    	$('body').append('<div class="overlay" id="js-overlay"></div>').addClass("open-modal");
 
-    	$('.js-modal-close, #js-overlay').on('click', function(event) {
+    	$('.js-modal-close').on('click', function(event) {
     		event.preventDefault();
-    		$('.js-modal, #js-overlay').fadeOut(250);
+    		$('.js-modal').fadeOut(250);
     		$('body').removeClass("open-modal");
+    		$('#js-overlay').remove();
     	});
     });
+
+		$('body').on('click', "#js-overlay", function(){
+			$('.js-modal').fadeOut(250);
+    	$('body').removeClass("open-modal");
+    	$('#js-overlay').remove();
+		})    
 
     // // создание акардиона
 
@@ -87,11 +94,9 @@ $(function() {
     	/* Stuff to do when the mouse enters the element */
     	var $this = $(this),
     			popupId = $(this).attr('href');
-
     			$(popupId).fadeIn();
     }, function() {
     	/* Stuff to do when the mouse leaves the element */
-
     	$('.js-popup').fadeOut('');
     });
 });
