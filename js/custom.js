@@ -38,6 +38,14 @@ $(function() {
 
     // создание модального окна
 
+    $(".js-modal").each(function(index, el) {
+	    let modalWidth = $(this).innerWidth() / 2;
+	    
+	    $(this).css({
+	    	"marginLeft" : "-" + modalWidth + "px"
+	    });
+    });
+
     $('.js-show-modal').on('click', function(event) {
     	event.preventDefault();
     	var currentModal = $(this).attr('href');
