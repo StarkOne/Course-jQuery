@@ -107,4 +107,20 @@ $(function() {
     	/* Stuff to do when the mouse leaves the element */
     	$('.js-popup').fadeOut('');
     });
+
+    //company blog text toggle
+
+    $(".js-read-more").on('click', function(event) {
+        event.preventDefault();
+        let text = $(this).text();
+        let attrH = $(this).attr('href');
+
+        if(text == "Read More"){
+            $(this).text("Hide");
+        } else {
+            $(this).text("Read More");
+        }
+        $(attrH).toggleClass('hidden');
+
+    });
 });
